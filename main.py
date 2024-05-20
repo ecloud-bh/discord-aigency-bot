@@ -108,7 +108,7 @@ async def on_message(message):
                 await message.channel.send("Başarıyla giriş yapıldı! AI listesini getiriyorum...")
                 access_token = response['access_token']
                 ai_response = ai_team_list(access_token)
-                print(f"AI Team List API Response: {ai_response}")  # Yanıtı terminale yazdır
+                
                 if 'error' in ai_response:
                     await message.channel.send(ai_response['error'])
                     del user_sessions[user_id]
