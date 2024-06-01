@@ -1,23 +1,53 @@
-# Discord AIGENCY Bot
+# Discord AIGENCY Bot v2
 
-Bu proje, AIGENCY API'si ile etkileşimde bulunarak Discord'da kullanıcıların yapay zeka modelleriyle sohbet etmelerini sağlayan bir bottur.
+## Kurulum ve Çalıştırma
 
-## Özellikler
+Botu çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
 
-- Kullanıcılar e-posta ve şifreleriyle giriş yapabilirler.
-- Mevcut yapay zeka modellerinin listesini görebilirler. (Komut: !ai)
-- Seçilen bir yapay zeka modeliyle sohbet başlatabilirler.
-- Sohbeti sıfırlayabilir veya kapatabilirler. (Komut: !reset)
-- Oturum durumu kontrol edebilirler. (Komut: !durum)
-- Yardım komutları için !yardim komutunu kullanabilirsiniz.
+1. **Depoyu Kopyalayın:**
+    ```bash
+    git clone https://github.com/ecloud-bh/discord-aigency-bot.git
+    cd discord-aigency-bot
+    ```
 
-## Kurulum
+2. **Gereksinimleri Yükleyin:**
+    Python ve pip yüklü olduğundan emin olun ve ardından aşağıdaki komutu çalıştırarak gereksinimleri yükleyin:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-1. Bu projeyi bilgisayarınıza klonlayın.
-2. https://discord.com/developers/ adresinden uygulamanızı oluşturup Token bilginizi main.py içinde 5. satırdaki ilgili yere yapıştırın.
-3. AI ile sohbet edebilmek için <bold>https://aigency.dev</bold> adresinde hesabınızın olması gerekmektedir.
+3. **Yapılandırma Dosyasını Ayarlayın:**
+    `config.py` dosyasını oluşturun ve aşağıdaki değişkenleri tanımlayın:
+    ```python
+    DISCORD_TOKEN = 'Your-Discord-Token-Here'
+    AGENCY_API_URL = 'https://api.aigency.com/'
+    ```
 
-   ```bash
-   git clone https://github.com/ecloud-bh/discord-aigency-bot.git
-   cd discord-aigency-bot
-   python main.py
+4. **Botu Başlatın:**
+    ```bash
+    python main.py
+    ```
+
+## Kullanım
+
+Bot aşağıdaki komutları destekler:
+
+- **!baslat:** Oturumu başlatır ve kullanıcıdan e-posta adresi ve şifresini ister.
+- **!yardim:** Mevcut komutların listesini gösterir.
+- **!sifirla:** Sohbeti sıfırlar.
+- **!ai:** AI listesini görüntüler.
+- **!kapat:** Mevcut sohbeti kapatır.
+- **!durum:** Mevcut oturum durumunu kontrol eder.
+- **/img:** AIGENCY Image Model v1 ile resim oluşturur.
+
+Dosya gönderdiğinizde, dosya içeriği analiz edilir ve ilgili AI modeli ile işlenir. Resim gönderdiğinizde, resim analizi yapılır.
+
+## Güncellemeler
+
+- **HTTP İstekleri için Yeniden Deneme:** HTTP istekleri için yeniden deneme mantığı eklendi, böylece zaman aşımı hataları durumunda istekler otomatik olarak yeniden denenir.
+- **Komut İşleme İyileştirmeleri:** Komut işleme ve kullanıcı oturumu yönetimi iyileştirildi.
+- **AI Sohbet Yönetimi:** Giriş yapma, AI listesi alma, sohbet başlatma, mesaj gönderme ve sohbet kapatma gibi işlemler için fonksiyonlar eklendi.
+- **Dosya ve Resim İşleme:** Dosya ve resim yükleme ve analiz yetenekleri geliştirildi.
+- **Geliştirilmiş Loglama:** Bot operasyonları boyunca ayrıntılı loglama eklendi.
+
+Güncellenmiş botu kullanarak daha güvenilir ve kullanıcı dostu bir deneyim elde edebilirsiniz.
