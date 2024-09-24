@@ -20,7 +20,7 @@ Botu çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
     `config.py` dosyasını oluşturun ve aşağıdaki değişkenleri tanımlayın:
     ```python
     DISCORD_TOKEN = 'Your-Discord-Token-Here'
-    AGENCY_API_URL = 'https://api.aigency.com/'
+    AGENCY_API_URL = 'https://aigency.dev/'
     ```
 
 4. **Botu Başlatın:**
